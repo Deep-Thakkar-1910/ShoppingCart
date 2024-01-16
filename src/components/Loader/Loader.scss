@@ -1,0 +1,46 @@
+.loaderContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  .loader {
+    color: #ccc;
+    position: relative;
+    border-radius: 3px;
+    font-size: 11px;
+    background: #ccc;
+    animation: escaleY 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+    animation-delay: -0.16s;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border-radius: 3px;
+    left: 2em;
+    background: #ccc;
+    width: 1em;
+    height: 4em;
+    animation: escaleY 1s infinite ease-in-out;
+  }
+  .loader:before {
+    left: -2em;
+    animation-delay: -0.32s;
+  }
+
+  @keyframes escaleY {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 4em;
+    }
+    40% {
+      box-shadow: 0 -2em;
+      height: 5em;
+    }
+  }
+}
